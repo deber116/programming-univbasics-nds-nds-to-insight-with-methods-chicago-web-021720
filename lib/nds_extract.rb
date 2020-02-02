@@ -21,9 +21,24 @@ end
 #
 # { directorOne => allTheMoneyTheyMade, ... }
 def directors_totals(nds)
-  pp nds
   result = {}
-  nil
+  first_array_index = 0
+  while first_array_index < nds.count do
+    director_name = nds[first_array_index][:name]
+    second_array = nds[first_array_index][:movies]
+    second_array_index = 0
+    gross_income = 0
+    while second_array_index < second_array.count do
+      money = second_array[second_array_index][:worldwide_gross]
+      gross_income += money
+      second_array_index += 1
+    end
+    result[director_name] = gross_income
+    first_array_index += 1
+  end
+  
+  result
+end
 end
 
 
