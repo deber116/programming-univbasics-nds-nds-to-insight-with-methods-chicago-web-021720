@@ -25,8 +25,8 @@ def directors_totals(nds)
   first_array_index = 0
   while first_array_index < nds.count do
     director_data = nds[first_array_index]
-    director_name = nds[first_array_index][:name]
-    result[director_name] = gross_for_director[director_data]
+    director_name = director_data[:name]
+    result[director_name] = gross_for_director(director_data)
     first_array_index += 1
   end
   result
